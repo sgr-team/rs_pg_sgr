@@ -1,0 +1,23 @@
+[package]
+edition = "2021"
+name = "pg_sgr_from_row"
+version = "0.1.0"
+authors = ["Dmitry Balakov"]
+description = "Part of pg_sgr: macros for deserializing rust data structures from postgres rows"
+keywords = ["postgres", "pg", "row", "deserialize", "sql"]
+categories = ["database"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/sgr-team/rs_sgr_pg.git"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = "2.0.23"
+quote = "1.0.29"
+proc-macro2 = "1.0.69"
+
+[dev-dependencies]
+postgres = { version = "0.19.3", features = ["with-serde_json-1"] }
+serde = { version = "1.0.130", features = ["derive"] }
+serde_json = "1.0.71"

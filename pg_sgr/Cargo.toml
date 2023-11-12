@@ -1,0 +1,17 @@
+[package]
+edition = "2021"
+name = "pg_sgr"
+version = "0.1.0"
+authors = ["Dmitry Balakov"]
+description = "Sugar for postgres"
+keywords = ["postgres", "pg", "row", "deserialize", "sql"]
+categories = ["database"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/sgr-team/rs_sgr_pg.git"
+
+[features]
+all = ["from_row"]
+from_row = ["dep:pg_sgr_from_row"]
+
+[dependencies]
+pg_sgr_from_row = { path = "../features/from_row", optional = true }
