@@ -1,0 +1,19 @@
+[package]
+name = "pg_sgr"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/sgr-team/rs_pg_sgr"
+description = "Sugar for postgres (from_row)"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = [ ]
+sync = [ "pg_sgr_from_row/sync" ]
+tokio = [ "pg_sgr_from_row/tokio" ]
+from_row = [ "dep:pg_sgr_from_row" ]
+
+[dependencies]
+pg_sgr_from_row = { version = "0.1.0", default-features = false, optional = true }
